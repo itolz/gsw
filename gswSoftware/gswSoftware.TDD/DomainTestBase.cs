@@ -5,12 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace gswSoftware.Test
+namespace gswSoftware.TDD
 {
     public class DomainTestBase
     {
         public ServiceProvider provider { get; set; }
-
         public DomainTestBase()
         {
             var service = new ServiceCollection();
