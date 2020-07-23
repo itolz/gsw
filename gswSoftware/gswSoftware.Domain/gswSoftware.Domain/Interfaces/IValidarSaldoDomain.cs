@@ -4,8 +4,8 @@ using System.Text;
 
 namespace gswSoftware.Domain.Interfaces
 {
-    public interface IAtualizarSaldoDomain
+    public interface IValidarSaldoDomain
     {
-        public void Execute(int Id, int Saldo);
-    } 
+        public bool Execute(int IdCliente, int valorSolicitado);
+    }
 }

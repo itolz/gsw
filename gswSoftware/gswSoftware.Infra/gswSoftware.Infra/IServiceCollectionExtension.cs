@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-
+using gswSoftware.Infra.Data.Repository;
+using gswSoftware.Domain.Interfaces;
 
 namespace gswSoftware.Infra
 {
@@ -9,7 +10,7 @@ namespace gswSoftware.Infra
     {
         public static IServiceCollection AddInfraServiceCollection(this IServiceCollection services)
         {
-            //services.AddScoped<interface, Class>();
+            services.AddScoped<IClienteRepository, ClienteRepositoryFake>();
 
             return services; 
         }

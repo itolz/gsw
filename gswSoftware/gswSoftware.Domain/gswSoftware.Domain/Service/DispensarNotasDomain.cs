@@ -14,14 +14,14 @@ namespace gswSoftware.Domain.Service
 
         }
 
-        public List<NotaDomain> Execute(int valorSolicitado)
+        public List<CedulaDomain> Execute(int valorSolicitado)
         {
             var cedulaCem = new CedulaDispensadoraDomain(100);
             var cedulaCinquenta = new CedulaDispensadoraDomain(50);
             var cedulaVinte = new CedulaDispensadoraDomain(20);
             var cedulaDez = new CedulaDispensadoraDomain(10);
 
-            var cedulas = new List<NotaDomain>();
+            var cedulas = new List<CedulaDomain>();
 
             cedulaCem.SetNext(cedulaCinquenta);
             cedulaCinquenta.SetNext(cedulaVinte);

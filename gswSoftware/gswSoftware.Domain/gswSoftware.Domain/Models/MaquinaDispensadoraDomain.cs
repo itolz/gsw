@@ -12,14 +12,14 @@ namespace gswSoftware.Domain
 
         public int DenominacaoNota { get; }
 
-        public abstract void SelecionarNotas(int valorSolicitado, List<NotaDomain> listaCedulas);
+        public abstract void SelecionarNotas(int valorSolicitado, List<CedulaDomain> listaCedulas);
   
 
         public void SetNext(MaquinaDispensadoraDomain next) {
             Next = next; 
         }
 
-        public List<NotaDomain> DispensarNotas(List<NotaDomain> lista)
+        public List<CedulaDomain> DispensarNotas(List<CedulaDomain> lista)
         {
             return lista;
         }

@@ -9,7 +9,7 @@ namespace gswSoftware.Domain.Service
 {
     public class InserirClienteDomain : DomainBase, IInserirClienteDomain
     {
-        public void Executar(string nome, int Saldo)
+        public void Execute(string nome, int Saldo)
         {
             provider.GetService<IClienteRepository>().Insert(nome, Saldo);
         }

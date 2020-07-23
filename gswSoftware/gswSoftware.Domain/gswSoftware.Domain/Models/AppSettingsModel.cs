@@ -4,8 +4,8 @@ using System.Text;
 
 namespace gswSoftware.Domain.Models
 {
-    public class CedulaDomain
+    public class AppSettingsModel
     {
-        public int Cedula { get; set; }
+        public string ConnectionString { get; set; }
     }
 }

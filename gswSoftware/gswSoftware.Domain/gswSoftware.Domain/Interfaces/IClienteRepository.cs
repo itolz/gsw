@@ -9,6 +9,8 @@ namespace gswSoftware.Domain.Interfaces
     {
         public IEnumerable<ClienteDomain> Listar();
 
+        public ClienteDomain Selecionar(int Id);
+
         public int Update(int Id, int saldo);
 
         public int Insert(string nome, int saldo);

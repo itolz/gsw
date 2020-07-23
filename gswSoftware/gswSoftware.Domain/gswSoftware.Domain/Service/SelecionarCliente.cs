@@ -1,17 +1,17 @@
 ﻿using gswSoftware.Domain.Interfaces;
+using gswSoftware.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Extensions.DependencyInjection;
 
-
 namespace gswSoftware.Domain.Service
 {
-    public class AtualizarSaldoDomain : DomainBase, IAtualizarSaldoDomain
+    public class SelecionarCliente : DomainBase, ISelecionarCliente
     {
-        public void Execute(int id, int saldo)
+        public ClienteDomain Execute(int Id)
         {
-            provider.GetService<IClienteRepository>().Update(id, saldo);
+            return provider.GetService<IClienteRepository>().Selecionar(Id);
         }
     }
 }

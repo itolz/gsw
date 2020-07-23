@@ -49,7 +49,7 @@ namespace gswSoftware.TDD
 
             var notasDispensadas = service.Execute(valorSolicitado);
 
-            var somaValorNotasDispensadas = notasDispensadas.Sum(n => n.Valor);
+            var somaValorNotasDispensadas = notasDispensadas.Sum(n => n.Cedula);
 
             Assert.True(valorSolicitado == somaValorNotasDispensadas, string.Format("Somatoria Valor Solicitado ({0}) diferente da Somatoria do Valor das Notas Dispensadas", valorSolicitado));
             Assert.True(quantidadeNotasDispensadasEsperado == notasDispensadas.Count, string.Format("Quantidade de notas para o valor solicitado {0} nao corresponde ao esperado", valorSolicitado));

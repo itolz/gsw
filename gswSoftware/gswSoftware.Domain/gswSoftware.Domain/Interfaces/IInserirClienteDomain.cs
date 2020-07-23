@@ -6,6 +6,6 @@ namespace gswSoftware.Domain.Interfaces
 {
     public interface IInserirClienteDomain
     {
-        public void Executar(string Nome, int Saldo);
+        public void Execute(string Nome, int Saldo);
     }
 }

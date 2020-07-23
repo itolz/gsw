@@ -5,8 +5,8 @@ using System.Text;
 
 namespace gswSoftware.Domain.Interfaces
 {
-    public interface IDispensarNotasDomain
+    public interface IOperarSaqueDomain
     {
-        public List<CedulaDomain> Execute(int valorSolicitado); 
+        public RetornoOperacaoDomain Execute(int IdUsuario, int valorSolicitado);
     }
 }

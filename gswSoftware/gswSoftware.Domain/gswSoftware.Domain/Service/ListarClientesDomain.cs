@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace gswSoftware.Domain.Service
 {

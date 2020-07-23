@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Moq" Version="4.14.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\gswSoftware.Domain\gswSoftware.Domain\gswSoftware.Domain.csproj" />
     <ProjectReference Include="..\..\gswSoftware.Infra\gswSoftware.Infra\gswSoftware.Infra.csproj" />
   </ItemGroup>
