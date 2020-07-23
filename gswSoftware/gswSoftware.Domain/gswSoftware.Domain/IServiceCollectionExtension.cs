@@ -13,7 +13,7 @@ namespace gswSoftware.Domain
         public static IServiceCollection AddDomainServiceCollection(this IServiceCollection services)
         {
             services.AddSingleton<IInitializeDomain, InitializeDomain>();
-            services.AddScoped<ISacarMontanteDomain, SacarMontanteDomain>();
+            services.AddScoped<IDispensarNotasDomain, DispensarNotasDomain>();
 
             return services;
         }

@@ -5,8 +5,8 @@ using System.Text;
 
 namespace gswSoftware.Domain.Interfaces
 {
-    public interface ISacarMontanteDomain
+    public interface IDispensarNotasDomain
     {
-        public List<NotaDomain> Execute(int ValorSaque); 
+        public List<NotaDomain> Execute(int valorSolicitado); 
     }
 }
