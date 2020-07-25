@@ -29,11 +29,14 @@ namespace gswSoftware.WebAPI
         {
             services.AddControllers();
 
-            //services.Configure<AppSettingsModel>(Configuration.GetSection("ApplicationSettings"));
-
-            // Other configuration stuff
-
-            //services.AddOptions();
+            services.AddCors(options => {
+                options.AddPolicy("AllowOrigin",
+                    builder => builder
+                        .AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        );
+            });
 
         }
 
@@ -44,6 +47,8 @@ namespace gswSoftware.WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("AllowOrigin"); 
 
             app.UseHttpsRedirection();
 

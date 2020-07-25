@@ -23,6 +23,22 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\src\models\ICedula.ts" />
+    <None Remove="ClientApp\src\models\ICliente.ts" />
+    <None Remove="ClientApp\src\models\IRetornoOperacao.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\models\ICedula.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\ICliente.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\IRetornoOperacao.ts" />
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
