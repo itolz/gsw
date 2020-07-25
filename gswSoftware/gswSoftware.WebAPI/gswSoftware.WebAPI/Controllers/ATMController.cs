@@ -13,9 +13,12 @@ namespace gswSoftware.WebAPI.Controllers
     [Route("[controller]")]
     public class ATMController : WebApiControllerBase
     {
-        [HttpGet("OperarSaque")]
-        public RetornoOperacaoDomain OperarSaque(int idUsuario, int valorSolicitado)
+        [HttpPost("OperarSaque")]
+        public RetornoOperacaoDomain OperarSaque(SaqueDomain saque)
         {
+            int idUsuario = saque.Id;
+            int valorSolicitado = saque.ValorSolicitado;
+
             return GetService<IOperarSaqueDomain>().Execute(idUsuario, valorSolicitado);
         }
 

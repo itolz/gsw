@@ -23,8 +23,8 @@ namespace gswSoftware.Infra.Data.Repository
         {
             List<ClienteDomain> listaDomain = new List<ClienteDomain>();
             listaDomain.Add(new ClienteDomain { Id = 1, Nome = "Aline", Saldo = 800 });
-            listaDomain.Add(new ClienteDomain { Id = 1, Nome = "Laura", Saldo = 30 });
-            listaDomain.Add(new ClienteDomain { Id = 1, Nome = "Sofia", Saldo = 130 });
+            listaDomain.Add(new ClienteDomain { Id = 2, Nome = "Laura", Saldo = 30 });
+            listaDomain.Add(new ClienteDomain { Id = 3, Nome = "Sofia", Saldo = 130 });
 
             return listaDomain;
 

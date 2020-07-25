@@ -9,5 +9,9 @@ namespace gswSoftware.Domain.Models
         public string MensagemRetornoAmigavel { get; set; }
 
         public List<CedulaDomain> CedulasDispensadas { get; set; }
+
+        public int TipoRetorno { get; set; }
+
+        public int ValorSaque { get; set; }
     }
 }
