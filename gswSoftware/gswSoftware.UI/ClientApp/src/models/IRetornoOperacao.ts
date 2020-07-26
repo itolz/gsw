@@ -1,8 +1,8 @@
-import { ICedula } from "./ICedula";
+import { Cedula } from "./ICedula";
 
-export interface IRetornoOperacao {
-  mensagemRetornoAmigavel: string,
-  cedulasDispensadas: Array<ICedula>,
+export class RetornoOperacao {
+  mensagemRetornoAmigavel: string;
+  cedulasDispensadas: Array<Cedula>;
   tipoRetorno: number;
   valorSaque: number;
 }

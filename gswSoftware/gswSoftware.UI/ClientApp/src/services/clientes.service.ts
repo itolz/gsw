@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IRetornoOperacao } from '../models/IRetornoOperacao';
 import { Observable } from 'rxjs';
 import { Cliente } from '../models/Cliente';
 

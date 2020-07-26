@@ -3,8 +3,8 @@ import { ClientesService } from '../../services/clientes.service';
 import { AtmService } from '../../services/atm.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Saque } from '../../models/saque';
-import { IRetornoOperacao } from '../../models/IRetornoOperacao';
-import { ICedula } from '../../models/ICedula';
+import { RetornoOperacao } from '../../models/IRetornoOperacao';
+import { Cedula } from '../../models/ICedula';
 
 @Component({
   selector: 'app-atm',
@@ -13,8 +13,8 @@ import { ICedula } from '../../models/ICedula';
 })
 export class AtmComponent implements OnInit {
   formSaque: FormGroup;
-  retornoOperacao: IRetornoOperacao;
-  cedulasDispensadas: Array<ICedula>;
+  retornoOperacao: RetornoOperacao;
+  cedulasDispensadas: Array<Cedula>;
   valorSaque: number; 
 
   //controles de usabilidade
@@ -53,8 +53,8 @@ export class AtmComponent implements OnInit {
 
     this.atmService.OperarSaque(this.formSaque.value).subscribe(
       data => {
-        this.retornoOperacao = data as IRetornoOperacao;
-        this.cedulasDispensadas = this.retornoOperacao.cedulasDispensadas as Array<ICedula>;
+        this.retornoOperacao = data as RetornoOperacao;
+        this.cedulasDispensadas = this.retornoOperacao.cedulasDispensadas as Array<Cedula>;
         
 
         if (this.retornoOperacao.tipoRetorno == 0) {

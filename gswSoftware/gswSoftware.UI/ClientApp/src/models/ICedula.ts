@@ -1,3 +1,3 @@
-export interface ICedula {
+export class Cedula {
   cedula: number
 }
