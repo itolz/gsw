@@ -13,16 +13,18 @@ namespace gswSoftware.Domain
         public static IServiceCollection AddDomainServiceCollection(this IServiceCollection services)
         {
             services.AddSingleton<IInitializeDomain, InitializeDomain>();
+            services.AddSingleton<ITokenDomain, TokenDomain>();
             services.AddScoped<IAtualizarSaldoDomain, AtualizarSaldoDomain>();
             services.AddScoped<IDispensarNotasDomain, DispensarNotasDomain>();
             services.AddScoped<IInserirClienteDomain, InserirClienteDomain>();
             services.AddScoped<IListarClientesDomain, ListarClientesDomain>();
             services.AddScoped<IOperarSaqueDomain, OperarSaqueDomain>();
-            services.AddScoped<ISelecionarCliente, SelecionarCliente>();
+            services.AddScoped<ISelecionarClienteDomain, SelecionarClienteDomain>();
             services.AddScoped<IValidarSaldoDomain, ValidarSaldoDomain>();
             services.AddScoped<IValidarSaldoDomain, ValidarSaldoDomain>();
             services.AddScoped<IExcluirClienteDomain, ExcluirClienteDomain>();
             services.AddScoped<IEditarClienteDomain, EditarClienteDomain>();
+            services.AddScoped<IListarClientesPublicoDomain, ListarClientesPublicoDomain>();
 
             return services;
         }

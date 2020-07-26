@@ -4,14 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
 
 namespace gswSoftware.Domain.Service
 {
-    public class SelecionarCliente : DomainBase, ISelecionarCliente
+    public class ListarClientesPublicoDomain :DomainBase,  IListarClientesPublicoDomain
     {
-        public ClienteDomain Execute(int Id)
+        public List<ClienteDomain> Execute()
         {
-            return provider.GetService<IClienteRepository>().Selecionar(Id);
+            return provider.GetService<IClienteRepository>().ListarPublico().ToList();
         }
     }
 }

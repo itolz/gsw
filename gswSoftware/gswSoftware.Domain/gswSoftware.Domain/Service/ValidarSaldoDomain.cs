@@ -8,7 +8,7 @@ namespace gswSoftware.Domain.Service
     {
         public bool Execute(int IdCliente, int valorSolicitado)
         {
-            var cliente = provider.GetService<ISelecionarCliente>().Execute(IdCliente);
+            var cliente = provider.GetService<ISelecionarClienteDomain>().Execute(IdCliente);
 
                 return cliente.Saldo >= valorSolicitado;
         }

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using gswSoftware.Domain.Models;
 using gswSoftware.Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace gswSoftware.WebAPI.Controllers
 {
@@ -14,6 +16,7 @@ namespace gswSoftware.WebAPI.Controllers
     public class ATMController : WebApiControllerBase
     {
         [HttpPost("OperarSaque")]
+        [AllowAnonymous]
         public RetornoOperacaoDomain OperarSaque(SaqueDomain saque)
         {
             int idUsuario = saque.Id;
@@ -23,9 +26,10 @@ namespace gswSoftware.WebAPI.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public string Get()
         {
-            return "GSW Accessement";
+            return "GSW Accessement webapi";
         }
     }
 }

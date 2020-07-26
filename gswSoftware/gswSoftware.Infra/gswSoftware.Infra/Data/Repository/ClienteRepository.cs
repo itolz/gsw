@@ -17,13 +17,24 @@ namespace gswSoftware.Infra.Data.Repository
          
         }
 
-        public IEnumerable<ClienteDomain> Listar()
+        public IEnumerable<ClienteDomain> ListarPublico()
         {
+
             using (SqlConnection conexao = new SqlConnection(""))
             {
-                return conexao.Query<ClienteDomain>("select Id, Nome, Saldo from [dbo].[Clientes]");
+                return conexao.Query<ClienteDomain>("select Id, Nome, role from [dbo].[Clientes] where role='cliente'");
             }
         }
+
+        public IEnumerable<ClienteDomain> Listar()
+        {
+
+            using (SqlConnection conexao = new SqlConnection(""))
+            {
+                return conexao.Query<ClienteDomain>("select Id, Nome, Saldo, UserName, Password, Role from [dbo].[Clientes]");
+            }
+        }
+      
 
         public int AtualizarSaldo(int Id, int saldo)
         {
@@ -65,6 +76,14 @@ namespace gswSoftware.Infra.Data.Repository
             }
         }
 
-       
+        public ClienteDomain Login(string UserName, string Password)
+        {
+            using (SqlConnection conexao = new SqlConnection(""))
+            {
+                return conexao.QueryFirstOrDefault<ClienteDomain>("select Id, Nome, Role from [dbo].[Clientes]  where UserName = @UserName and Password = @Password", new { UserName, Password });
+            }
+        }
+
+        
     }
 }

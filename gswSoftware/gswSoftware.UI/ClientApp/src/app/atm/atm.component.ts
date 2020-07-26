@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientesService } from '../../services/clientes.service';
 import { AtmService } from '../../services/atm.service';
+import { AccountService } from '../../services/account.service';
+
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Saque } from '../../models/saque';
-import { RetornoOperacao } from '../../models/IRetornoOperacao';
-import { Cedula } from '../../models/ICedula';
+import { RetornoOperacao } from '../../models/RetornoOperacao';
+import { Cedula } from '../../models/Cedula';
 
 @Component({
   selector: 'app-atm',
@@ -15,7 +17,8 @@ export class AtmComponent implements OnInit {
   formSaque: FormGroup;
   retornoOperacao: RetornoOperacao;
   cedulasDispensadas: Array<Cedula>;
-  valorSaque: number; 
+  valorSaque: number;
+  nome: string
 
   //controles de usabilidade
   relatorioDispensaNotas: boolean = false;
@@ -29,11 +32,19 @@ export class AtmComponent implements OnInit {
 
   constructor(private clientesService: ClientesService,
     private atmService: AtmService,
-    private formBuilder: FormBuilder) { }
+    private accountService: AccountService,
+    private formBuilder: FormBuilder) {
+    let nomeLogado = this.accountService.getNome();
+
+    this.nome = 'Olá ' + nomeLogado;
+  }
 
   ngOnInit() {
+    console.log('chamada createform');
+    let id = this.accountService.getId();
 
-    this.createForm(new Saque());
+    console.log(id);
+    this.createForm(new Saque(id));
 
   }
 
@@ -65,8 +76,8 @@ export class AtmComponent implements OnInit {
 
 
           this.relatorioDispensaNotas = true;
-          this.formularioVisivel = false;
         }
+        this.formularioVisivel = false;
         this.novoSaqueBotao = true;
       }
     )
@@ -74,7 +85,7 @@ export class AtmComponent implements OnInit {
 
   novoSaque() {
     console.log('novo saque');
-    this.createForm(new Saque());
+    this.createForm(new Saque(this.accountService.getId()));
     this.relatorioDispensaNotas = false;
     this.retornoOperacao = null;
     this.novoSaqueBotao = false;

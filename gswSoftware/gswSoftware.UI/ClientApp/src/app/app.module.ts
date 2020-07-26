@@ -13,16 +13,16 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { AtmComponent } from './atm/atm.component';
 import { AdminComponent } from './admin/admin.component';
 import { ClientesService } from '../services/clientes.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     AtmComponent,
-    AdminComponent
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,10 +31,9 @@ import { ClientesService } from '../services/clientes.service';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
       { path: 'atm', component: AtmComponent },
       { path: 'admin', component: AdminComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'login', component: LoginComponent },
     ])
   ],
   providers: [ClientesService],

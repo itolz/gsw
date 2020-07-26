@@ -17,7 +17,7 @@ namespace gswSoftware.Domain.Service
             var serviceValidarSaldo = provider.GetService<IValidarSaldoDomain>();
             var serviceAtualizarSaldo = provider.GetService<IAtualizarSaldoDomain>();
             var serviceDispensarNotasDomain = provider.GetService<IDispensarNotasDomain>();
-            var serviceSelecionarCliente = provider.GetService<ISelecionarCliente>();
+            var serviceSelecionarCliente = provider.GetService<ISelecionarClienteDomain>();
 
             try
             {

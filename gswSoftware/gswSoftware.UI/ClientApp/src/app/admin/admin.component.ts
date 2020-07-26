@@ -41,7 +41,8 @@ export class AdminComponent implements OnInit {
     this.formCliente = this.formBuilder.group(
       {
         nome: cliente.nome,
-        saldo: cliente.saldo
+        saldo: cliente.saldo,
+        role: cliente.role
       }
     )
   }

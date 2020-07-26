@@ -6,4 +6,4 @@ var RetornoOperacao = /** @class */ (function () {
     return RetornoOperacao;
 }());
 exports.RetornoOperacao = RetornoOperacao;
-//# sourceMappingURL=IRetornoOperacao.js.map
+//# sourceMappingURL=RetornoOperacao.js.map

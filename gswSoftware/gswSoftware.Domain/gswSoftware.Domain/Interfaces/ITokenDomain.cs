@@ -5,8 +5,8 @@ using System.Text;
 
 namespace gswSoftware.Domain.Interfaces
 {
-    public interface ISelecionarCliente
+    public interface ITokenDomain
     {
-        public ClienteDomain Execute(int Id);
+        public string GenerateToken(ClienteDomain cliente);
     }
 }

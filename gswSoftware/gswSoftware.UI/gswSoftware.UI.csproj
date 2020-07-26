@@ -24,9 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\models\Cedula.ts" />
     <None Remove="ClientApp\src\models\Cliente.ts" />
-    <None Remove="ClientApp\src\models\ICedula.ts" />
-    <None Remove="ClientApp\src\models\IRetornoOperacao.ts" />
+    <None Remove="ClientApp\src\models\RetornoOperacao.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,9 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\models\ICedula.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Cedula.ts" />
     <TypeScriptCompile Include="ClientApp\src\models\Cliente.ts" />
-    <TypeScriptCompile Include="ClientApp\src\models\IRetornoOperacao.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\RetornoOperacao.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

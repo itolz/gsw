@@ -25,9 +25,6 @@
               [routerLinkActiveOptions]="{ exact: true }">
             <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
           </li>
-          <!--<li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
-          </li>-->
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/atm']">ATM</a>
           </li>
@@ -35,8 +32,9 @@
             <a class="nav-link text-dark" [routerLink]="['/admin']">Admin</a>
           </li>
           <!--<li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
+            <a class="nav-link text-dark"> | <span class="clicavel fa fa-user" (click)="FormularioLogin()">&nbsp;{{userName}}</span></a>
           </li>-->
+
         </ul>
       </div>
     </div>

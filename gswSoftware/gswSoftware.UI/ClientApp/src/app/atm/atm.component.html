@@ -1,8 +1,13 @@
 <h1>ATM</h1>
 <div>
+  {{nome}}
+</div>
+<br/>
+
+<div>
   <div [hidden]="!formularioVisivel">
     <form [formGroup]="formSaque" (ngSubmit)="onSubmit()">
-      <div class="form-group">
+      <div class="form-group oculto" >
         <label for="id">Id</label>
         <input type="number" class="form-control" name="id" formControlName="id" />
       </div>
@@ -41,6 +46,6 @@
     </table>
   </div>
   <div *ngIf="novoSaqueBotao">
-    <input type="button" class="btn-block btn-primary" value="Realizar Novo Saque" (click)="novoSaque()" />
+    <input type="button" class="btn btn-primary" value="Realizar Novo Saque" (click)="novoSaque()" />
   </div>
 </div>

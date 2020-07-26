@@ -1,4 +1,4 @@
-import { Cedula } from "./ICedula";
+import { Cedula } from "./Cedula";
 
 export class RetornoOperacao {
   mensagemRetornoAmigavel: string;
