@@ -16,7 +16,7 @@ namespace gswSoftware.Infra.Data.Repository
 
         public int Insert(string nome, int saldo)
         {
-            return 0; 
+            return 0;
         }
 
         public IEnumerable<ClienteDomain> Listar()
@@ -35,9 +35,14 @@ namespace gswSoftware.Infra.Data.Repository
             return Listar().Where(c => c.Id == Id).FirstOrDefault(); 
         }
 
-        public int Update(int Id, int saldo)
+        public int AtualizarSaldo(int Id, int saldo)
         {
             return Selecionar(Id).Saldo - saldo;
+        }
+
+        public int Editar(int Id, string nome, int saldo)
+        {
+            return 0; 
         }
     }
 }

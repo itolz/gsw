@@ -11,7 +11,7 @@ namespace gswSoftware.Domain.Service
     {
         public void Execute(int id, int saldo)
         {
-            provider.GetService<IClienteRepository>().Update(id, saldo);
+            provider.GetService<IClienteRepository>().AtualizarSaldo(id, saldo);
         }
     }
 }

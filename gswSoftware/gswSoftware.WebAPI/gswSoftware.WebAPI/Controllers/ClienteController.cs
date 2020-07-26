@@ -26,9 +26,22 @@ namespace gswSoftware.WebAPI.Controllers
         }
 
         [HttpPost("InserirCliente")]
-        public void InserirCliente(string Nome, int Saldo)
+        public void InserirCliente(ClienteDomain cliente)
         {
-            GetService<IInserirClienteDomain>().Execute(Nome, Saldo);
+            GetService<IInserirClienteDomain>().Execute(cliente);
+        }
+
+        [HttpPut("EditarCliente")]
+        public void EditarCliente(ClienteDomain cliente)
+        {
+            GetService<IEditarClienteDomain>().Execute(cliente);
+        }
+
+
+        [HttpDelete("ExcluirCliente/{id}")]
+        public void ExcluirCliente(int id)
+        {
+            GetService<IExcluirClienteDomain>().Execute(id);
         }
     }
 }

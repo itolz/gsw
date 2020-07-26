@@ -5,8 +5,8 @@ using System.Text;
 
 namespace gswSoftware.Domain.Interfaces
 {
-    public interface IInserirClienteDomain
+    public interface IExcluirClienteDomain
     {
-        public void Execute(ClienteDomain cliente);
+        public void Execute(int id);
     }
 }

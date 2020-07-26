@@ -5,7 +5,7 @@ using System.Text;
 
 namespace gswSoftware.Domain.Interfaces
 {
-    public interface IInserirClienteDomain
+    public interface IEditarClienteDomain
     {
         public void Execute(ClienteDomain cliente);
     }

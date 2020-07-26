@@ -20,6 +20,9 @@ namespace gswSoftware.Domain
             services.AddScoped<IOperarSaqueDomain, OperarSaqueDomain>();
             services.AddScoped<ISelecionarCliente, SelecionarCliente>();
             services.AddScoped<IValidarSaldoDomain, ValidarSaldoDomain>();
+            services.AddScoped<IValidarSaldoDomain, ValidarSaldoDomain>();
+            services.AddScoped<IExcluirClienteDomain, ExcluirClienteDomain>();
+            services.AddScoped<IEditarClienteDomain, EditarClienteDomain>();
 
             return services;
         }

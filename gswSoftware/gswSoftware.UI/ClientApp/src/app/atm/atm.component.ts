@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientesService } from '../../services/clientes.service';
 import { AtmService } from '../../services/atm.service';
-import { ICliente } from '../../models/ICliente';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Saque } from '../../models/saque';
 import { IRetornoOperacao } from '../../models/IRetornoOperacao';
@@ -10,8 +9,7 @@ import { ICedula } from '../../models/ICedula';
 @Component({
   selector: 'app-atm',
   templateUrl: './atm.component.html',
-  styleUrls: ['./atm.component.css'],
-  providers: [ClientesService]
+  styleUrls: ['./atm.component.css']
 })
 export class AtmComponent implements OnInit {
   formSaque: FormGroup;
@@ -34,7 +32,7 @@ export class AtmComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.listarClientes();
+
     this.createForm(new Saque());
 
   }
@@ -48,16 +46,7 @@ export class AtmComponent implements OnInit {
     )
   }
 
-  listaClientes: Array<ICliente> = [];
-
-  listarClientes() {
-    this.clientesService.listarClientes().subscribe(
-      data => {
-        this.listaClientes = data as Array<ICliente>;
-        console.log(this.listaClientes);
-      }
-    )
-  }
+  
 
 
   onSubmit() {

@@ -11,7 +11,9 @@ namespace gswSoftware.Domain.Interfaces
 
         public ClienteDomain Selecionar(int Id);
 
-        public int Update(int Id, int saldo);
+        public int AtualizarSaldo(int Id, int saldo);
+
+        public int Editar(int Id, string nome, int saldo);
 
         public int Insert(string nome, int saldo);
 

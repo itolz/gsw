@@ -1,1 +1,54 @@
-<p>admin works!</p>
+<h1>Admin Clientes</h1>
+<div>
+  <div [hidden]="!gridVisivel">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>
+            Id
+          </th>
+          <th>
+            Nome
+          </th>
+          <th>
+            Saldo
+          </th>
+          <th>
+            Editar
+          </th>
+          <th>
+            Excluir
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of listaClientes">
+          <td>{{cliente.id}}</td>
+          <td>{{cliente.nome}}</td>
+          <td>{{cliente.saldo}}</td>
+          <td><span class="clicavel fa fa-pencil" (click)="EditarCliente(cliente)"></span></td>
+          <td><span class="clicavel fa fa-trash" (click)="ExcluirCliente(cliente)"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <input type="button" class="btn btn-primary" value="Incluir Cliente" (click)="IncluirCliente()" />
+    </div>
+  </div>
+  <div  [hidden]="!formularioVisivel">
+    <form [formGroup]="formCliente" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" name="nome" formControlName="nome" />
+      </div>
+      <div class="form-group">
+        <label for="saldo">Saldo</label>
+        <input type="number" class="form-control" name="saldo" formControlName="saldo" />
+      </div>
+      <div>
+        <input type="submit" class="btn btn-primary" value="Salvar" />&nbsp;<input type="button" class="btn btn-primary" value="Cancelar" (click)="Cancelar()" />
+      </div>
+
+    </form>
+  </div>
+</div>

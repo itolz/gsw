@@ -24,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\models\Cliente.ts" />
     <None Remove="ClientApp\src\models\ICedula.ts" />
-    <None Remove="ClientApp\src\models\ICliente.ts" />
     <None Remove="ClientApp\src\models\IRetornoOperacao.ts" />
   </ItemGroup>
 
@@ -35,7 +35,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\models\ICedula.ts" />
-    <TypeScriptCompile Include="ClientApp\src\models\ICliente.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Cliente.ts" />
     <TypeScriptCompile Include="ClientApp\src\models\IRetornoOperacao.ts" />
   </ItemGroup>
 

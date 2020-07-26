@@ -12,8 +12,6 @@ namespace gswSoftware.Infra.Data.Repository
 {
     internal class ClienteRepository : IClienteRepository
     {
-       
-
         public ClienteRepository()
         {
          
@@ -27,13 +25,19 @@ namespace gswSoftware.Infra.Data.Repository
             }
         }
 
-        public int Update(int Id, int saldo)
+        public int AtualizarSaldo(int Id, int saldo)
         {
             using (SqlConnection conexao = new SqlConnection(""))
             {
-
-
                 return conexao.Execute("update dbo.Clientes set Saldo = @saldo Where Id = @id", new { saldo, id = Id });
+            }
+        }
+
+        public int Editar(int Id, string nome, int saldo)
+        {
+            using (SqlConnection conexao = new SqlConnection(""))
+            {
+                return conexao.Execute("update dbo.Clientes set Nome = @nome,  Saldo = @saldo Where Id = @id", new { nome, saldo, id = Id });
             }
         }
 
@@ -60,5 +64,7 @@ namespace gswSoftware.Infra.Data.Repository
                 return conexao.QueryFirstOrDefault<ClienteDomain>("select Id, Nome, Saldo from [dbo].[Clientes]  where Id = @id", new { id = Id });
             }
         }
+
+       
     }
 }
