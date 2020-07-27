@@ -2,60 +2,17 @@
 
 ## Instruções
 
-1. Clonar o repositório;
-2. Envie um e-mail (mariana.bompean@gsw.com.br), informando a data para finalização do teste;
-3. Criar o repositorio no Github/gitlab/bitbucket e enviar o código para lá.
-4. Crie uma branch com o seu nome;
-5. Envie (nicolas@gsw.com.br) o link para que seja avaliado;
-
-### O teste
-
-Trata-se de uma aplicação que simula a entrega de notas quando um cliente efetua um saque em um caixa eletrônico. 
-
-Os requisitos básicos são os seguintes:
-
- 1. Entregar o menor número de notas;
- 2. Somente será possível sacar o valor solicitado com as notas disponíveis;
- 3. Saldo do cliente será cadastrado (apenas o administrador poderá fazer isso); 
- 4. Quantidade de notas infinita;
- 5. Notas disponíveis de R$ 100,00; R$ 50,00; R$ 20,00 e R$ 10,00 
- 6. O Cliente não poderá entrar no negativo;
- 7. Fazer o CRUD de cliente juntamente com seu saldo;
- 8. Garantir no máximo 5 usuários ao mesmo tempo.
-
-Não estamos exigindo layout e também arquitetura do projeto, porém, isso será um diferencial.
-
-### Outros Requisitos:
-* Para a persistência dos dados deve ser utilizado o Dapper ou Entity Core.
-* Configurar o Swagger na aplicação
-* Usar Microsfot SqlServer 2014 ou superior.
-* Gerar Scripts e disponibilizá-los em uma pasta.
-* Implementar front-end para consumir a API em  Angular.
-
-### Observações:
-* O sistema deverá ser desenvolvido na plataforma .NET com C#, usando o framework ASP.NET (Core/Full ramework)
-* Deve conter autenticação com dois níveis de acesso, um administrador e um público, o usuário de nível 
-público não terá autenticação, ou seja, terá acesso livre;
+1. Git Clone https://github.com/itolz/gsw.git , branch italovinicios
+2. Abrir o projeto, de preferência com Visual Studio 2017 ou superior
+3. Realizar o build da Solution(a mesma irá baixar os pacotes nugets)
+4. Disparar os Testes através da janela do Test Explorer e garantir que a dispensadora de cédulas atende conforme esperado
+5. Realizar o publish da API
+6. A partir do folder clientApp, realizar o comando npm install para garantir todos os pacotes do frontEnd
+7. Podemos rodar o frontEnd com o comando ng serve
+8. Apesar de implementado o Dapper, tal funcionalidade não terminou de ser testada devido a corrupção do banco de dados no ambiente de desenvolvimento
+9. Para os testes serão utilizados dados Mockados, já prontos e cobrindo 100% dos testes. 
+10. Para alterar entre Mock e Implementação Dapper, a Injeção de Dependencia dever ser alterada de ClienteRepositorioFake para ClienteRepositorio, se assim desejado
 
 
-### Diferencial:
-* Aplicação das boas práticas do DDD, TDD, Design Patterns, SOLID e Clean Code.
-obs: Teste terá como avaliação principal os requisitos solicitados para o backend,  porém o frontend 
-poderá ser critério de desempate.
-
-### Instruções
-
-Você deve baixar o projeto, **criar uma branch nova com o seu nome**, trocar esse readme com as intruções para rodar este projeto e após isso criar um pull request para a master quando tiver finalizado.
-O projeto atualmente não 'builda' e nem compila.
-
-Exemplo:
-- Baixar os pacotes Nuget
-- Publicar o projeto, publicar a WebAPI;
-- Instalar o pacote XYZ do node
-- Compilar o Angular;
-- Fazer os testes da aplicação;
-- Aplicar melhorias e testes se achar necessário.
-
-Lembre-se da portabilidade da aplicação. Quanto mais fácil for para subir a aplicação para quem for fazer a correção, melhor você será avaliado.
-
-**Após baixar e analisar esse projeto, responda com um e-mail o prazo que você levará para concluí-lo.**
+## Duvidas
+Entrar em contato pelo italovinicios@gmail.com ou (13) 99127-3352. 
