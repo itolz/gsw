@@ -13,14 +13,23 @@ export class HomeComponent {
 
   listaClientesPublico: Array<Cliente> = [];
 
+
+
   constructor(private clientesService: ClientesService,
     private router: Router,
     private accountservice: AccountService
+
   ) { }
 
   ngOnInit() {
 
     this.listarClientesPublico();
+
+
+  }
+
+  ngOnDestroy() {
+
   }
 
   SelecionarCliente(cliente: Cliente) {
@@ -41,6 +50,8 @@ export class HomeComponent {
   Redirecionar() {
     this.router.navigate(['/login'])
   }
+
+
 
 
 }

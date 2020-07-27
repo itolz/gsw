@@ -1,13 +1,17 @@
 <h1>ATM</h1>
+<br />
+<div [hidden]="usuariosOnline == -1">Número de Usuários Online no ATM: {{usuariosOnline}}</div>
+<div [hidden]="usuariosOnline != -1" class="alert alert-warning">{{mensagemUsuariosOnline}}</div>
+<br />
 <div>
   {{nome}}
 </div>
-<br/>
+<br />
 
 <div>
   <div [hidden]="!formularioVisivel">
     <form [formGroup]="formSaque" (ngSubmit)="onSubmit()">
-      <div class="form-group oculto" >
+      <div class="form-group oculto">
         <label for="id">Id</label>
         <input type="number" class="form-control" name="id" formControlName="id" />
       </div>
@@ -18,11 +22,11 @@
       <input type="submit" class="btn btn-primary mt-4" value="Realizar Saque" />
     </form>
   </div>
-  <br/>
+  <br />
   <div *ngIf="retornoOperacao!= undefined" [ngClass]="{'alert alert-success': retornoOperacao.tipoRetorno == 0, 'alert alert-warning':retornoOperacao.tipoRetorno == 1, 'alert alert-danger':retornoOperacao.tipoRetorno == 2 }">
     <h1>{{retornoOperacao.mensagemRetornoAmigavel}}</h1>
   </div>
-  <br/>
+  <br />
   <div *ngIf="relatorioDispensaNotas" [hidden]="retornoOperacao.tipoRetorno != 0">
     <h3>Valor do Saque: {{retornoOperacao.valorSaque}}</h3>
     <h3>Quantidade de Notas Dispensadas</h3>
@@ -47,5 +51,8 @@
   </div>
   <div *ngIf="novoSaqueBotao">
     <input type="button" class="btn btn-primary" value="Realizar Novo Saque" (click)="novoSaque()" />
+  </div>
+  <div>
+    <input type="button" class="btn btn-primary" value="Deixar ATM" (click)="DeixarATM()" />
   </div>
 </div>

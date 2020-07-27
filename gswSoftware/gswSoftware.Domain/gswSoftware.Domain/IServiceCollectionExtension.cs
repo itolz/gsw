@@ -25,6 +25,7 @@ namespace gswSoftware.Domain
             services.AddScoped<IExcluirClienteDomain, ExcluirClienteDomain>();
             services.AddScoped<IEditarClienteDomain, EditarClienteDomain>();
             services.AddScoped<IListarClientesPublicoDomain, ListarClientesPublicoDomain>();
+            //services.AddSingleton<IUsuariosOnlineDomain, UsuariosOnlineDomain>();
 
             return services;
         }

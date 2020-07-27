@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ClientesService } from '../../services/clientes.service';
 import { AtmService } from '../../services/atm.service';
 import { AccountService } from '../../services/account.service';
+import { UsuariosOnlineService } from '../../services/usuarios-online.service';
 
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Saque } from '../../models/saque';
 import { RetornoOperacao } from '../../models/RetornoOperacao';
 import { Cedula } from '../../models/Cedula';
+import { Router } from "@angular/router"
+
 
 @Component({
   selector: 'app-atm',
@@ -18,7 +21,9 @@ export class AtmComponent implements OnInit {
   retornoOperacao: RetornoOperacao;
   cedulasDispensadas: Array<Cedula>;
   valorSaque: number;
-  nome: string
+  nome: string;
+  usuariosOnline: number = 0;
+  mensagemUsuariosOnline: string = "Muitos usuários estão online. Tente mais tarde.";
 
   //controles de usabilidade
   relatorioDispensaNotas: boolean = false;
@@ -33,6 +38,8 @@ export class AtmComponent implements OnInit {
   constructor(private clientesService: ClientesService,
     private atmService: AtmService,
     private accountService: AccountService,
+    private usuariosOnlineService: UsuariosOnlineService,
+    private router: Router,
     private formBuilder: FormBuilder) {
     let nomeLogado = this.accountService.getNome();
 
@@ -40,12 +47,19 @@ export class AtmComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.AdicionarUsuariosOnline();
+
+    if(this.usuariosOnline == -1)
+
     console.log('chamada createform');
     let id = this.accountService.getId();
-
     console.log(id);
     this.createForm(new Saque(id));
 
+  }
+
+  ngOnDestroy() {
+    this.RemoverUsuariosOnline();
   }
 
   createForm(saque: Saque) {
@@ -90,6 +104,37 @@ export class AtmComponent implements OnInit {
     this.retornoOperacao = null;
     this.novoSaqueBotao = false;
     this.formularioVisivel = true;
+    this.AdicionarUsuariosOnline();
+
+  }
+
+  RecuperarUsuariosOnline() {
+    this.usuariosOnlineService.UsuariosOnline().subscribe(
+      data => {
+        this.usuariosOnline = data as number;
+      }
+    )
+  }
+
+  AdicionarUsuariosOnline() {
+    this.usuariosOnlineService.adicionarUsuariosOnline().subscribe(
+      data => {
+        this.usuariosOnline = data as number;
+      }
+    )
+  }
+
+  RemoverUsuariosOnline() {
+    this.usuariosOnlineService.removerUsuariosOnline().subscribe(
+      data => {
+        this.usuariosOnline = data as number;
+      }
+    )
+  }
+
+  DeixarATM() {
+    this.RemoverUsuariosOnline();
+    this.router.navigate(['']);
 
   }
 

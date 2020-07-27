@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using gswSoftware.Domain.Interfaces;
 using gswSoftware.Domain.Models;
+using gswSoftware.Domain.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -63,6 +65,8 @@ namespace gswSoftware.WebAPI
                 };
             });
 
+
+            services.AddSingleton<IUsuariosOnlineDomain, UsuariosOnlineDomain>();
 
         }
 

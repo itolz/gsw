@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../../models/Cliente';
 import { ClientesService } from '../../services/clientes.service';
+import { AccountService } from '../../services/account.service';
+
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from "@angular/router"
+
 
 
 
@@ -19,9 +23,17 @@ export class AdminComponent implements OnInit {
   gridVisivel: boolean = true; 
 
   constructor(private clientesService: ClientesService,
+              private router: Router,
+    private accountService: AccountService,
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+
+    let adminToken = this.accountService.getToken();
+
+    if (adminToken == null)
+        this.router.navigate(['']);
+
     this.createForm(new Cliente());
     this.listarClientes();
   }

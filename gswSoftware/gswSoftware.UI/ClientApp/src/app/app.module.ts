@@ -13,6 +13,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { AtmComponent } from './atm/atm.component';
 import { AdminComponent } from './admin/admin.component';
 import { ClientesService } from '../services/clientes.service';
+import { UsuariosOnlineService } from '../services/usuarios-online.service';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -36,7 +37,7 @@ import { LoginComponent } from './login/login.component';
       { path: 'login', component: LoginComponent },
     ])
   ],
-  providers: [ClientesService],
+  providers: [ClientesService, UsuariosOnlineService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
