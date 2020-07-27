@@ -27,7 +27,6 @@ namespace gswSoftware.WebAPI.Controllers
             if (clienteRetornado != null)
             {
                 var token = provider.GetService<ITokenDomain>().GenerateToken(clienteRetornado);
-                clienteRetornado.Password = "";
                 clienteRetornado.Token = token;
 
             }

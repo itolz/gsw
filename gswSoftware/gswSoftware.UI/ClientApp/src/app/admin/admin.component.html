@@ -14,6 +14,9 @@
             Saldo
           </th>
           <th>
+            Role
+          </th>
+          <th>
             Editar
           </th>
           <th>
@@ -26,6 +29,7 @@
           <td>{{cliente.id}}</td>
           <td>{{cliente.nome}}</td>
           <td>{{cliente.saldo}}</td>
+          <td>{{cliente.role}}</td>
           <td><span class="clicavel fa fa-pencil" (click)="EditarCliente(cliente)"></span></td>
           <td><span class="clicavel fa fa-trash" (click)="ExcluirCliente(cliente)"></span></td>
         </tr>
@@ -47,10 +51,18 @@
       </div>
       <div class="form-group">
         <label for="role">Cargo</label>
-        <select class="form-control" name="role"  id="role" formControlName="role">
+        <select class="form-control" name="role" id="role" formControlName="role">
           <option value="cliente">Cliente</option>
           <option value="admin">Admin</option>
         </select>
+      </div>
+      <div class="form-group">
+        <label for="nome">Login</label>
+        <input type="text" class="form-control" name="userName" formControlName="userName" />
+      </div>
+      <div class="form-group">
+        <label for="nome">Password</label>
+        <input type="password" class="form-control" name="password" formControlName="password" />
       </div>
       <div>
         <input type="submit" class="btn btn-primary" value="Salvar" />&nbsp;<input type="button" class="btn btn-primary" value="Cancelar" (click)="Cancelar()" />

@@ -61,11 +61,6 @@ export class LoginComponent implements OnInit {
       }
     );
 
-    //this.router.navigateByUrl('/admin', { skipLocationChange: true }).then(() => {
-    //  this.router.navigate(['/login']);
-
-
-    //});
   }
 
 

@@ -10,7 +10,7 @@ namespace gswSoftware.Infra
     {
         public static IServiceCollection AddInfraServiceCollection(this IServiceCollection services)
         {
-            services.AddScoped<IClienteRepository, ClienteRepositoryFake>();
+            services.AddSingleton<IClienteRepository, ClienteRepositoryFake>();
 
             return services; 
         }

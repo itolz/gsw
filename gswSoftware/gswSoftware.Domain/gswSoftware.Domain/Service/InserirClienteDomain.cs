@@ -11,7 +11,7 @@ namespace gswSoftware.Domain.Service
     {
         public void Execute(ClienteDomain cliente)
         {
-            provider.GetService<IClienteRepository>().Insert(cliente.Nome, cliente.Saldo);
+            provider.GetService<IClienteRepository>().Insert(cliente.Nome, cliente.Saldo, cliente.Role, cliente.UserName, cliente.Password);
         }
     }
 }

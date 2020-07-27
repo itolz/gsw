@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using gswSoftware.Domain.Interfaces;
 using gswSoftware.Domain.Models;
 using gswSoftware.Domain.Service;
+using gswSoftware.Infra.Data.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -65,8 +66,11 @@ namespace gswSoftware.WebAPI
                 };
             });
 
+ 
 
             services.AddSingleton<IUsuariosOnlineDomain, UsuariosOnlineDomain>();
+            //services.AddScoped<IClienteRepository, ClienteRepositoryFake>();
+
 
         }
 

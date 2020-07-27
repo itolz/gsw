@@ -17,7 +17,7 @@ namespace gswSoftware.Domain.Interfaces
 
         public int Editar(int Id, string nome, int saldo);
 
-        public int Insert(string nome, int saldo);
+        public int Insert(string nome, int saldo, string role, string userName, string password);
 
         public int Deletar(int Id);
 

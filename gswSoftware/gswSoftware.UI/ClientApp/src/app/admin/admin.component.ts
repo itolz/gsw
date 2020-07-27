@@ -49,12 +49,20 @@ export class AdminComponent implements OnInit {
     )
   }
 
+
+
   createForm(cliente: Cliente) {
+    if (cliente.id == undefined || cliente.id == null)
+      cliente.id = 0;
+
     this.formCliente = this.formBuilder.group(
       {
+        id: cliente.id,
         nome: cliente.nome,
         saldo: cliente.saldo,
-        role: cliente.role
+        role: cliente.role,
+        userName: cliente.userName,
+        password: cliente.password
       }
     )
   }

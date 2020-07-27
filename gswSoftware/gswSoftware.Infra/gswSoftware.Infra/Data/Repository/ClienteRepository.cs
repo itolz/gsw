@@ -10,7 +10,7 @@ using System.Text;
 
 namespace gswSoftware.Infra.Data.Repository
 {
-    internal class ClienteRepository : IClienteRepository
+    public class ClienteRepository : IClienteRepository
     {
         public ClienteRepository()
         {
@@ -60,11 +60,11 @@ namespace gswSoftware.Infra.Data.Repository
             }
         }
 
-        public int Insert(string nome, int saldo)
+        public int Insert(string nome, int saldo, string role, string userName, string password)
         {
             using (SqlConnection conexao = new SqlConnection(""))
             {
-                return conexao.Execute("insert into  dbo.Clientes(Nome, Saldo) values (@Nome, @Saldo)", new { nome, saldo });
+                return conexao.Execute("insert into  dbo.Clientes(Nome, Saldo, role, userName, password) values (@Nome, @Saldo, @role, @userName, @password)", new { nome, saldo, role, userName, password });
             }
         }
 
